@@ -21,7 +21,7 @@ SHM (SmartHubMonitor)
 	                        post to ThingSpeak (default: False)
 	
 	  --config_file CONFIG_FILE
-	                        Configuration options file (default=
+	                        Configuration options file (default:
 	                        SHM_config_default)
 
 ## User notes
@@ -34,9 +34,8 @@ The terms "Hub" and "modem" are used fairly interchangeably in this script. Sorr
 
 ## Configuration
 To configure:
-1. Copy the file SHM_config_default to a new file (e.g. SGM_config_mysetup)
-2. Set the parameters in modemOptions and publisherOptions as guided in the help text
-3. Set geckodriverpath if required (as a firefox user)
+1. Edit the parameters *modemOptions* and *publisherOptions* in SHM_config_default.py (you can also create a new file and pass the name in at the command line e.g. --config_file SGM_config_mysetup)
+2. Set geckodriverpath if required (as a firefox user)
 
 ## Execution
 1. Run the script using the command-line parameters above. Note that the name defined in --config_file does not require the '.py' extension
@@ -59,7 +58,7 @@ This script is designed for installation on Raspberry PI. These instructions ass
 
 		sudo pip3 install selenium
 
-* Paho (an MQTT library required for posting your stats using MQTT)
+* Paho (an MQTT library required for posting your stats using MQTT <https://pypi.org/project/paho-mqtt/>)
 
 		sudo pip3 install paho-mqtt
 
@@ -88,5 +87,5 @@ The script posts data to ThingSpeak using MQTT, but ThingSpeak needs to know wha
 Matlab scripts for the visualisations are included in the ts_info folder.
 
 ## Developer notes
-Additional modem / hubs can be defined in SHM_HubStatsCollector
-Additional publish routes can be defined in SHM_HubStatsPublisher
+* Additional modem / hubs / data to collect can be defined in SHM_HubStatsCollector
+* Additional publish routes can be defined in SHM_HubStatsPublisher
